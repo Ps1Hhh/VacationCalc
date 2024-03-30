@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/v1/vacation")
+@RequestMapping("/api/v1/vacation")
 public class VacationCalculatorController {
 
     private final VacationService service;
@@ -28,4 +28,5 @@ public class VacationCalculatorController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
+
 }
