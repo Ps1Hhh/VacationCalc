@@ -9,7 +9,7 @@ public class VacationService {
 
     private static final double AVERAGE_DAY_IN_MONTH = 30.42;
 
-    public String getVacation(VacationEntity entity) {
+    public double getVacation(VacationEntity entity) {
         if (entity.getSalary() == null || entity.getSalary() <= 0) {
             throw new IncorrectDataVacationException("The salary is missing or it is not correct");
         }
@@ -20,6 +20,6 @@ public class VacationService {
             countDays = entity.getVacationDays();
         }
 
-        return String.format("%.2f", entity.getSalary() / AVERAGE_DAY_IN_MONTH * countDays);
+        return entity.getSalary() / AVERAGE_DAY_IN_MONTH * countDays;
     }
 }
