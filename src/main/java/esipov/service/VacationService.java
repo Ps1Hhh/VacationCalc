@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class VacationService {
 
-    private static final Double AVGDayInMonth = 30.42;
+    private static final double AVERAGE_DAY_IN_MONTH = 30.42;
 
     public String getVacation(VacationEntity entity) {
         if (entity.getSalary() == null || entity.getSalary() <= 0) {
@@ -20,6 +20,6 @@ public class VacationService {
             countDays = entity.getVacationDays();
         }
 
-        return String.format("%.2f", entity.getSalary() / AVGDayInMonth * countDays);
+        return String.format("%.2f", entity.getSalary() / AVERAGE_DAY_IN_MONTH * countDays);
     }
 }

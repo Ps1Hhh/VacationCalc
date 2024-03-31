@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/vacation")
+@RequestMapping("/api/v1")
 public class VacationCalculatorController {
 
     private final VacationService service;
@@ -22,11 +22,11 @@ public class VacationCalculatorController {
 
     @GetMapping("/calculate")
     public ResponseEntity<?> getVacation(@RequestBody VacationEntity entity) {
+
         try {
             return new ResponseEntity<>(service.getVacation(entity), HttpStatus.OK);
         } catch (IncorrectDataVacationException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
-
 }

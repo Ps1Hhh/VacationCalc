@@ -1,5 +1,12 @@
 package esipov.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
 public class VacationEntity {
 
     Integer vacationDays;
@@ -10,11 +17,4 @@ public class VacationEntity {
         this.salary = salary;
     }
 
-    public Integer getVacationDays() {
-        return this.vacationDays;
-    }
-
-    public Double getSalary() {
-        return this.salary;
-    }
 }
