@@ -1,6 +1,6 @@
 package esipov.controllers;
 
-import esipov.model.VacationEntity;
+import esipov.model.Request;
 import esipov.service.VacationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ public class VacationCalculatorController {
     private final VacationService service;
 
     @PostMapping("/calculate")
-    public ResponseEntity<Double> getVacation(@RequestBody VacationEntity entity) {
+    public ResponseEntity<Double> getVacation(@RequestBody Request entity) {
         return new ResponseEntity<>(service.getVacation(entity), HttpStatus.OK);
     }
 }

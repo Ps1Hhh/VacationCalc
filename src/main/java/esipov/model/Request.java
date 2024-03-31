@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class VacationEntity {
+public class Request {
 
     private Integer vacationDays;
     private Double salary;
